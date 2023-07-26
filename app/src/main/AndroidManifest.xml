@@ -9,17 +9,21 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:usesCleartextTraffic="true"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LAB5_MOB403"
+        android:usesCleartextTraffic="true"
+        android:enableOnBackInvokedCallback="true"
         tools:targetApi="31">
         <activity
             android:name=".EditProductActivity"
             android:exported="false" />
         <activity
             android:name=".AddProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AllProductsActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

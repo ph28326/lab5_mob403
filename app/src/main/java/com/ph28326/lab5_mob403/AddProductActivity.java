@@ -27,7 +27,23 @@ public class AddProductActivity extends AppCompatActivity {
                 strName = edtName.getText().toString();
                 strPrice = edtPrice.getText().toString();
                 strDes = edtDescription.getText().toString();
-                newProductTask.execute(strName,strPrice,strDes);
+
+                if (strName.isEmpty()) {
+                    edtName.setError("Name is required");
+                    return;
+                }
+
+                if (strPrice.isEmpty()) {
+                    edtPrice.setError("Price is required");
+                    return;
+                }
+
+                if (strDes.isEmpty()) {
+                    edtDescription.setError("Description is required");
+                    return;
+                }
+
+                newProductTask.execute(strName, strPrice, strDes);
             }
         });
     }

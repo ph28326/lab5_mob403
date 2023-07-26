@@ -54,13 +54,19 @@ public class CreateNewProductTask extends AsyncTask<String, String, String> {
         Log.d("Create response", jsonObject.toString());
         try {
             int success = jsonObject.getInt(Constants.TAG_SUCCESS);
-            if (success == 1) {// Successfully created product
+            if (success == 1) {
+                // Successfully created product
                 Intent intent = new Intent(context, AllProductsActivity.class);
                 context.startActivity(intent);
                 ((Activity) context).finish();
-                // closing Create product screen
+            } else {
+                // Failed to create product
+                String message = jsonObject.getString(Constants.TAG_FAILURE);
+                Log.d("Create error", message);
             }
         } catch (Exception e) {
+            // Error occurred
+            Log.d("Create error", e.getMessage());
         }
 
         return null;

@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class LoadAllProducts extends AsyncTask<String, String, String> {
+public class LoadAllProductsTask extends AsyncTask<String, String, String> {
     Context context;
     ListView lvProducts;
     ProgressDialog pDialog;
@@ -26,7 +26,7 @@ public class LoadAllProducts extends AsyncTask<String, String, String> {
     JSONArray products = null;
     AdapterProduct adapterProduct;
 
-    public LoadAllProducts(Context context, ListView lvProducts) {
+    public LoadAllProductsTask(Context context, ListView lvProducts) {
         this.context = context;
         this.lvProducts = lvProducts;
         jParser = new JSONParser();

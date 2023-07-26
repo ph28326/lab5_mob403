@@ -8,14 +8,14 @@ import android.widget.ListView;
 
 public class AllProductsActivity extends AppCompatActivity {
     private ListView lvProducts;
-    LoadAllProducts task;
+    LoadAllProductsTask task;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_products);
         lvProducts = (ListView)findViewById(R.id.listProducts);
-        task = new LoadAllProducts(AllProductsActivity.this,lvProducts);
+        task = new LoadAllProductsTask(AllProductsActivity.this,lvProducts);
         task.execute();
     }
     @Override
